@@ -1,3 +1,78 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@import url("./tailwind-global.css");
+@import url("./normalize.css");
+
+body {
+  @apply font-roboto text-black;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(216, 216, 216, 1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.app-container {
+  @apply max-w-[1160px] px-6 py-10 mx-auto;
+}
+
+@media (max-width: 576px) {
+  .app-container {
+    @apply px-[15px] py-[25px] max-w-full;
+  }
+}
+.card-container {
+  @apply cursor-pointer flex items-center w-fit transition duration-300 h-12 px-4 rounded-[10px] sm:h-[68px] sm:px-5 sm:rounded-xl;
+}
+
+.badge-contrainer {
+  @apply absolute rounded-full bg-primary-gradient text-white py-[2px] top-[2px] right-[2px] text-[9px] px-1 sm:top-[3px] sm:right-[3px] sm:px-[6px] sm:text-[10px];
+}
+
+.chip-container {
+  @apply whitespace-nowrap transition-all duration-300 cursor-pointer select-none border border-transparent bg-chip-color text-black-light font-medium text-sm rounded-lg px-3 py-2 hover:text-black sm:rounded-[10px];
+}
+
+.ui-input {
+  @apply w-full transition-all duration-300 border-2 border-border-color font-medium rounded-[10px] h-12 px-4 text-sm placeholder:opacity-100 focus:placeholder:opacity-0 placeholder:transition-all placeholder:duration-300 placeholder:font-normal placeholder:text-sm placeholder:text-black-light sm:placeholder:text-base sm:h-[51px] sm:rounded-xl sm:px-5 sm:text-base focus:outline-0 focus:border-primary;
+}
+
+.error-message {
+  @apply transition-all duration-300 opacity-100 text-error text-xs leading-[10px] px-1 sm:text-sm sm:leading-3;
+}
+
+.ui-input:focus + .input-details .clear-icon {
+  opacity: 1 !important;
+}
+
+.ui-input:focus::placeholder {
+  opacity: 0;
+}
+
+.ui-input:focus + .input-details .error-message {
+  opacity: 0;
+}
+.ui-button {
+  @apply transition-all duration-300 font-medium w-full text-white text-lg h-[49px] rounded-xl hover:opacity-80 disabled:opacity-50 focus:outline-0 sm:h-[63px] sm:text-xl;
+}
+
+.ui-button.primary {
+  @apply bg-primary-gradient;
+}
+
+.payment-method-card {
+  @apply w-full flex items-center h-[51px] px-[6px] gap-[6px] sm:gap-4 sm:px-5 sm:h-[68px];
+}
+
+.payment-method-list {
+  @apply  w-full h-full max-h-[155px] grid grid-cols-cols-2 gap-2 px-[2px] py-sm sm:gap-4 sm:max-h-[214px] sm:grid-cols-cols-3 md:grid-cols-cols-4 lg:grid-cols-cols-5;
+}

@@ -4,8 +4,7 @@ const routes = [
   {
     path: "/",
     name: "payment",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../pages/index.vue"),
+    component: () => import("../pages/index.vue"),
   },
 ];
 
